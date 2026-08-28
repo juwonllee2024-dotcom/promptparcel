@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "name": "app.js",
+      "type": "text/javascript",
+      "size": 25,
+      "content": "export const answer = 42;"
+    },
+    {
+      "name": "README.md",
+      "type": "text/markdown",
+      "size": 17,
+      "content": "# PromptParcel\n"
+    }
+  ]
+}

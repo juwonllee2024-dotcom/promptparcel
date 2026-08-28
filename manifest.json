@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "PromptParcel — Send AI the exact files",
+  "version": "0.1.0",
+  "description": "Select local files, preview their receipt, and place a verified context parcel into any AI chat tab.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Build a PromptParcel"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ]
+}

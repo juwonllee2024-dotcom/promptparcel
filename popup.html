@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PromptParcel</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="eyebrow"><span class="signal-dot"></span> LOCAL CONTEXT ENVELOPE</div>
+        <h1>Prompt<span>Parcel</span></h1>
+        <p class="tagline">Send AI the exact files.</p>
+        <p class="hero-copy">Choose once. See the receipt. Put the same context into any AI tab without blind uploads.</p>
+      </header>
+
+      <section class="pick-card" aria-labelledby="pick-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">01 · SELECT</p>
+            <h2 id="pick-title">Pack local text files</h2>
+          </div>
+          <span class="local-pill">NO CLOUD</span>
+        </div>
+        <input id="file-input" class="visually-hidden" type="file" multiple accept=".c,.cc,.cpp,.css,.csv,.go,.h,.html,.java,.js,.json,.jsx,.md,.mjs,.py,.rb,.rs,.sh,.sql,.svg,.toml,.ts,.tsx,.txt,.xml,.yaml,.yml,text/*">
+        <button id="choose-button" class="choose-button" type="button">
+          <span class="file-plus" aria-hidden="true">＋</span>
+          <span><strong>Choose files</strong><small>Text, code, Markdown, JSON · max 8 files</small></span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <p id="selection-status" class="selection-status">Nothing selected. Files are read only after you choose them.</p>
+        <div id="file-list" class="file-list" aria-live="polite"></div>
+      </section>
+
+      <section id="parcel-panel" class="parcel-panel" hidden aria-labelledby="parcel-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">02 · REVIEW</p>
+            <h2 id="parcel-title">Your context receipt</h2>
+          </div>
+          <span class="receipt-mark">SHA-256</span>
+        </div>
+        <div class="receipt-total">
+          <span id="receipt-files">0 files</span>
+          <span id="receipt-size">0 characters</span>
+          <span id="receipt-hash">—</span>
+        </div>
+        <p class="receipt-note">The parcel shows every selected file, its byte count, and a content fingerprint before it reaches the chat box.</p>
+        <div class="action-row">
+          <button id="copy-button" class="secondary-button" type="button">Copy parcel <span>↗</span></button>
+          <button id="insert-button" class="primary-button" type="button">Insert into AI tab <span>↗</span></button>
+        </div>
+        <p id="action-status" class="action-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="promise-card">
+        <div class="promise-icon">✓</div>
+        <div><strong>No silent send.</strong><p>PromptParcel never uploads to its own server, stores your files, or presses Send. You stay in control.</p></div>
+      </section>
+
+      <footer class="footer-note">
+        <span>Local-only · no account · no model</span>
+        <span>v0.1.0</span>
+      </footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
